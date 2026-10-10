@@ -1,0 +1,13 @@
+{
+  "_说明": "随包最小 eval 的期望输出特征（合成样例）。改动数据或模板后跑 scripts/eval_synth.py 校准；每条都对应一个可解释的验收点。",
+  "years": ["2024", "2025"],
+  "_years_why": "随包样例是同一机构（康泰）的两年报告；机构一（仁和）的版式暂未随包（见 examples/README.md）。",
+  "items_per_report": 22,
+  "_items_why": "体检表逐项与 .txt 真源核对后的项数（2024=22、2025=22）。",
+  "min_mapping_rate": 0.9,
+  "_mapping_why": "合成机构已在目录里登记（22 条 MatchRule）；未映射的仅「血压BP」——血压为 A/B 对值，化验通道不拆分（见 examples/README.md 已知边界）。",
+  "forbidden_year": "2026",
+  "_forbidden_year_why": "数据年份是 2024/2025 —— 任何输出里都不该出现别人的年份（B1 回归锁）。",
+  "unit_safety_composites": true,
+  "_unit_safety_why": "该机构用美制单位（mg/dL）；引擎按设计只判等价、不换算 → 组合/分层评估必须拦下（报「不可评估」），不得把 mg/dL 当 mmol/L 算。"
+}

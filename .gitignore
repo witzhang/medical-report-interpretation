@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+*.egg-info/
+# 运行期产物（一律写用户工作目录；这里兜底防止误提交）
+体检解读_out/
+out/
+artifacts/
+*.log

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="641" viewBox="0 0 880 641" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+<rect width="880" height="641" fill="#ffffff"/>
+<text x="34" y="30" font-size="17" font-weight="700" fill="#1a1a1a">健康画像 · 2025-10-10</text>
+<line x1="34" y1="60" x2="846" y2="60" stroke="#e2e2e2" stroke-width="1"/>
+<rect x="26" y="48" width="84" height="24" fill="#ffffff"/>
+<text x="34" y="65" font-size="13.5" font-weight="700" fill="#6b6b6b" letter-spacing="0.5">需要处理的</text>
+<rect x="34" y="82" width="812" height="167" rx="6" fill="#fbfbfb" stroke="#e6e6e6" stroke-width="1"/>
+<rect x="34" y="82" width="6" height="167" rx="3.0" fill="#c0392b"/>
+<text x="54" y="101" font-size="15" font-weight="700" fill="#8e2a20">代谢出了问题 —— 下面六项是同一件事</text>
+<text x="60" y="139" font-size="14" fill="#333333">· 血压 145/92 mmHg（已达高血压标准）</text>
+<text x="60" y="162" font-size="14" fill="#333333">· 血糖 6.44 · 糖化血红蛋白 6.3%（已达糖尿病前期）</text>
+<text x="60" y="185" font-size="14" fill="#333333">· 甘油三酯 2.27 · 肝酶（谷丙转氨酶）74 · 尿酸 541 · BMI 27.1（超重）</text>
+<text x="60" y="216" font-size="14" font-weight="600" fill="#8e2a20">▸ 减重 4～8 kg —— 唯一能同时改善这六项的动作</text>
+<text x="60" y="241" font-size="14" font-weight="600" fill="#8e2a20">▸ 2 周内到心内科 + 内分泌科各看一次</text>
+<rect x="34" y="261" width="812" height="96" rx="6" fill="#fbfbfb" stroke="#e6e6e6" stroke-width="1"/>
+<rect x="34" y="261" width="6" height="96" rx="3.0" fill="#d97706"/>
+<text x="54" y="280" font-size="15" font-weight="700" fill="#8a4b06">肾可能已被牵连</text>
+<text x="60" y="318" font-size="14" fill="#333333">· 肾脏过滤能力三年 97.5 → 94.1 → 87.3，下降速度是同龄人自然下降的 4～10 倍</text>
+<text x="60" y="349" font-size="14" font-weight="600" fill="#8a4b06">▸ 1～3 个月内复查肾功能，并加查尿微量白蛋白 / 肌酐比值（ACR）</text>
+<rect x="34" y="369" width="812" height="96" rx="6" fill="#fbfbfb" stroke="#e6e6e6" stroke-width="1"/>
+<rect x="34" y="369" width="6" height="96" rx="3.0" fill="#4c9a2a"/>
+<text x="54" y="388" font-size="15" font-weight="700" fill="#2f6b18">单项随访，不急</text>
+<text x="60" y="426" font-size="14" fill="#333333">· 甲状腺右叶结节 4 mm（分级 3 类）——**2024 长过一次、之后稳住**</text>
+<text x="60" y="457" font-size="14" font-weight="600" fill="#2f6b18">▸ 继续每年复查甲状腺超声</text>
+<line x1="34" y1="495" x2="846" y2="495" stroke="#e2e2e2" stroke-width="1"/>
+<rect x="26" y="483" width="70" height="24" fill="#ffffff"/>
+<text x="34" y="500" font-size="13.5" font-weight="700" fill="#6b6b6b" letter-spacing="0.5">没问题的</text>
+<text x="42" y="533" font-size="15" fill="#333333">血液（血常规三年全优）· 甲状腺功能 · 尿常规 · 肌酐本身 —— 三年都稳</text>
+<line x1="34" y1="571" x2="846" y2="571" stroke="#e2e2e2" stroke-width="1"/>
+<rect x="26" y="559" width="164" height="24" fill="#ffffff"/>
+<text x="34" y="576" font-size="13.5" font-weight="700" fill="#6b6b6b" letter-spacing="0.5">不知道的（不是没问题）</text>
+<text x="42" y="609" font-size="15" fill="#333333">心肺功能 · 骨骼与感官 · 腰围 —— 三年没查 / 没测，因此无法评估</text>
+</svg>

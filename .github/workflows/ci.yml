@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: ${{ matrix.os }} · py${{ matrix.python-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.10", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: 安装依赖（唯一第三方 = PyMuPDF；pytest 仅测试用）
+        run: python -m pip install --upgrade pip "PyMuPDF>=1.23.0" pytest
+
+      - name: 环境预检
+        run: python engine/tools/preflight.py
+
+      - name: 合成 demo（引擎三件套 + 期望特征 + 对账链；不需要任何自有数据）
+        run: python scripts/eval_synth.py --out "${{ runner.temp }}/eval_synth"
+
+      - name: 单元与回归测试（未挂载数据根时，数据依赖项自动 skip 不算失败）
+        run: python -m pytest engine/tests -q
+
+      - name: 异常输入演练（扫描件/加密/版式不匹配/危急值等 8 种情形）
+        run: python scripts/edge_cases.py

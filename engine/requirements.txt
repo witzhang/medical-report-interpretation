@@ -1,0 +1,14 @@
+# 引擎依赖（P0-5）
+#
+# 唯一第三方依赖 = PyMuPDF。其余全部为标准库（csv/json/math/re/dataclasses/
+# argparse/statistics/unicodedata/hashlib/…），已逐个 import 核对。
+#
+# 实测环境：Python 3.13.12 + PyMuPDF 1.24.14（2026-10：引擎测试全绿、
+# pytest 版本 9.0.3 仅用于跑测试，不是运行依赖）。
+# Python 下限声明 3.9：全部模块使用 ``from __future__ import annotations``
+# （注解延迟求值），且未使用 3.10+ 的语法特性（无 match 语句、无运行时 X|Y）。
+# 更早版本未实测 —— 若在 3.9 以下运行报错，属未支持区间。
+#
+# ⚠️ 许可（README 亦已注明）：PyMuPDF 采用 **AGPL-3.0 / 商业双授权**。
+# 个人本地使用按 AGPL-3.0；对外分发/商用前需自行确认许可条件。
+PyMuPDF>=1.23.0

@@ -1,0 +1,662 @@
+{
+ "_说明": "中国口径判读规则库（P1-A 最小集）。范围纪律：**只覆盖两份基准报告里实际出现的项目**，不追求指引库覆盖度。结构沿用《体检分析/框架设计与扩展方向.md》的 Rule schema。",
+ "_schema": [
+  "rule_id",
+  "rule_version",
+  "name",
+  "assertion_type",
+  "input_fields",
+  "missing_data_policy",
+  "logic",
+  "threshold_value",
+  "threshold_unit",
+  "threshold_scope",
+  "output_text_zh",
+  "evidence_refs"
+ ],
+ "_纪律": [
+  "assertion_type 只允许 informational | advisory | red_flag，**diagnostic 严禁**",
+  "每条规则的 evidence_refs 必须能在 provenance.json 里指到",
+  "verified=False 的必须写明原因（scripts/validate_rules.py 锁死）",
+  "阈值来源 = 引擎（bands.py / rules.py / redflags.py）；本库不新增医学规则",
+  "涉药一律写「由 XX 科医生决定」；不给药名、不给剂量"
+ ],
+ "口径": "中国",
+ "版本": "2026-10-04",
+ "规则数": 29,
+ "rules": [
+  {
+   "rule_id": "R.LIPID.TC",
+   "rule_version": "1.0",
+   "name": "总胆固醇分档",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.总胆固醇"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "5.2 ≤ TC < 6.2 → 边缘升高；TC ≥ 6.2 → 升高；TC ≥ 7.2 → 直接高危（不再走 10 年风险）",
+   "threshold_value": [
+    5.2,
+    6.2,
+    7.2
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "ASCVD 低危人群；中高危阈值更严（须写明）",
+   "output_text_zh": "总胆固醇在 5.2–6.2 为边缘升高；≥6.2 为升高；≥7.2 直接按高危管理",
+   "evidence_refs": [
+    "P_LIPID2023_T3",
+    "P_CDR2025"
+   ]
+  },
+  {
+   "rule_id": "R.LIPID.LDL",
+   "rule_version": "1.0",
+   "name": "LDL-C 分档",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.低密度脂蛋白胆固醇"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "3.4 ≤ LDL-C < 4.1 → 边缘升高；≥4.1 → 升高；≥4.9 → 直接高危",
+   "threshold_value": [
+    3.4,
+    4.1,
+    4.9
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "ASCVD 低危人群",
+   "output_text_zh": "LDL-C 3.4–4.1 边缘升高；≥4.1 升高；≥4.9 直接高危",
+   "evidence_refs": [
+    "P_LIPID2023_T3",
+    "P_CDR2025"
+   ]
+  },
+  {
+   "rule_id": "R.LIPID.TG",
+   "rule_version": "1.0",
+   "name": "甘油三酯分档",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.甘油三酯"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "1.7 ≤ TG < 2.3 → 边缘升高；≥2.3 → 升高",
+   "threshold_value": [
+    1.7,
+    2.3
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "ASCVD 低危人群",
+   "output_text_zh": "甘油三酯 1.7–2.3 边缘升高；≥2.3 升高",
+   "evidence_refs": [
+    "P_LIPID2023_T3"
+   ]
+  },
+  {
+   "rule_id": "R.LIPID.HDL",
+   "rule_version": "1.0",
+   "name": "HDL-C 降低（男性）",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.高密度脂蛋白胆固醇"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "男性 HDL-C < 1.0 → 降低（女性界值不同，不得套用）",
+   "threshold_value": [
+    1.0
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "男性",
+   "output_text_zh": "好胆固醇低于 1.0 为降低（男性界值）",
+   "evidence_refs": [
+    "P_LIPID2023_T3"
+   ]
+  },
+  {
+   "rule_id": "R.LIPID.NONHDL",
+   "rule_version": "1.0",
+   "name": "非 HDL-C 目标与分档（两个概念）",
+   "assertion_type": "advisory",
+   "input_fields": [
+    "CHEM.总胆固醇",
+    "CHEM.高密度脂蛋白胆固醇"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "非 HDL-C = TC − HDL-C；治疗目标 = LDL 目标 + 0.8；分档界线 4.9（合适<4.1/边缘4.1–4.9/升高≥4.9）",
+   "threshold_value": [
+    4.2,
+    4.9
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "与 LDL 目标同适用人群",
+   "output_text_zh": "非 HDL-C 的 4.2 是「治疗目标」、4.9 是「分档界线」，两者不是一回事",
+   "evidence_refs": [
+    "P_LIPID2023_T7",
+    "P_LIPID2023_T3"
+   ]
+  },
+  {
+   "rule_id": "R.LIPID.STRAT",
+   "rule_version": "1.0",
+   "name": "血脂危险分层（21 格表，一级预防）",
+   "assertion_type": "advisory",
+   "input_fields": [
+    "CHEM.总胆固醇",
+    "CHEM.低密度脂蛋白胆固醇",
+    "CHEM.高密度脂蛋白胆固醇",
+    "VITAL.收缩压",
+    "VITAL.舒张压",
+    "年龄",
+    "吸烟",
+    "高血压"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "照《中国血脂管理指南（2023年）》图1/表（21 格）逐格判定；高血压未知 → 不可评估（不默认无）",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "无 ASCVD 的一级预防人群",
+   "output_text_zh": "危险分层决定 LDL 目标与是否用药（用药由临床医师决定）",
+   "evidence_refs": [
+    "P_LIPID2023_T7",
+    "P_CDR2025"
+   ]
+  },
+  {
+   "rule_id": "R.LIPID.TARGET",
+   "rule_version": "1.0",
+   "name": "LDL-C 目标值",
+   "assertion_type": "advisory",
+   "input_fields": [
+    "LIPID.RISK_STRATIFICATION"
+   ],
+   "missing_data_policy": "block",
+   "logic": "低危 <3.4；中/高危 <2.6；极高危 <1.8；超高危 <1.4（极高/超高危另有降幅 >50% 要求）",
+   "threshold_value": [
+    3.4,
+    2.6,
+    1.8,
+    1.4
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "按分层适用",
+   "output_text_zh": "目标值随危险分层变化；是否用药由临床医师决定",
+   "evidence_refs": [
+    "P_LIPID2023_T7"
+   ]
+  },
+  {
+   "rule_id": "R.BP.CLASS",
+   "rule_version": "1.0",
+   "name": "血压分类",
+   "assertion_type": "informational",
+   "input_fields": [
+    "VITAL.收缩压",
+    "VITAL.舒张压"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "取收缩压/舒张压中较重的一段：正常 <120/80；正常高值 120–139/80–89（其中 130–139/85–89 为重点关注段）；≥140/90 高血压",
+   "threshold_value": [
+    120,
+    130,
+    140,
+    80,
+    85,
+    90
+   ],
+   "threshold_unit": "mmHg",
+   "threshold_scope": "成人",
+   "output_text_zh": "血压在正常高值/重点关注段即需生活方式干预并加密监测",
+   "evidence_refs": [
+    "P_HTN2024"
+   ]
+  },
+  {
+   "rule_id": "R.GLU.PRE",
+   "rule_version": "1.0",
+   "name": "空腹血糖：糖尿病前期",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.葡萄糖"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "6.1 ≤ FPG < 7.0 → 糖尿病前期；≥7.0 → 糖尿病（单次不诊断，需复查确认）",
+   "threshold_value": [
+    6.1,
+    7.0
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "成人；版本差异：ADA 及疑似 2024 版从 5.6 起算前期",
+   "output_text_zh": "空腹血糖 6.1–6.9 属糖尿病前期（两种口径并列，见出处）",
+   "evidence_refs": [
+    "P_DM"
+   ]
+  },
+  {
+   "rule_id": "R.HBA1C.PRE",
+   "rule_version": "1.0",
+   "name": "HbA1c：糖尿病前期（版本差异）",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.糖化血红蛋白"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "5.7 ≤ HbA1c < 6.5 → 前期；≥6.5 → 糖尿病（2020 版未纳入 HbA1c 判前期）",
+   "threshold_value": [
+    5.7,
+    6.5
+   ],
+   "threshold_unit": "%",
+   "threshold_scope": "成人；须标注采用哪一版",
+   "output_text_zh": "糖化血红蛋白 5.7–6.4 属前期（取决于采用哪一版）",
+   "evidence_refs": [
+    "P_DM"
+   ]
+  },
+  {
+   "rule_id": "R.UA.HYPER",
+   "rule_version": "1.0",
+   "name": "高尿酸血症",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.尿酸"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "男性 >420 μmol/L → 高尿酸血症；≥540 考虑药物治疗（由医师决定）",
+   "threshold_value": [
+    420,
+    540
+   ],
+   "threshold_unit": "umol/L",
+   "threshold_scope": "男性",
+   "output_text_zh": "尿酸超过 420 为高尿酸血症（是否用药由医师定）",
+   "evidence_refs": [
+    "P_UA2019"
+   ]
+  },
+  {
+   "rule_id": "R.TG.PANCREATITIS",
+   "rule_version": "1.0",
+   "name": "甘油三酯与胰腺炎风险阈值",
+   "assertion_type": "informational",
+   "input_fields": [
+    "CHEM.甘油三酯"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "TG ≥5.6 mmol/L 才纳入胰腺炎风险讨论；未达阈值不得暗示胰腺炎风险",
+   "threshold_value": [
+    5.6
+   ],
+   "threshold_unit": "mmol/L",
+   "threshold_scope": "成人",
+   "output_text_zh": "距胰腺炎风险阈值（5.6）多远决定要不要说这件事",
+   "evidence_refs": [
+    "P_AB2019"
+   ]
+  },
+  {
+   "rule_id": "R.RENAL.EGFR",
+   "rule_version": "1.0",
+   "name": "eGFR 下降率与 CKD 快速进展",
+   "assertion_type": "informational",
+   "input_fields": [
+    "RENAL.EGFR_CKDEPI2021"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "健康成人自然下降 0.4–1.0 mL/min/1.73m²/年；持续 >5/年 = KDIGO 快速进展",
+   "threshold_value": [
+    0.4,
+    1.0,
+    5.0
+   ],
+   "threshold_unit": "mL/min/1.73m²/年",
+   "threshold_scope": "成人；3 点不做回归，比斜率",
+   "output_text_zh": "看 eGFR 是不是比同龄自然下降更快",
+   "evidence_refs": [
+    "P_EGFR"
+   ]
+  },
+  {
+   "rule_id": "R.HEPATIC.FIB4",
+   "rule_version": "1.0",
+   "name": "FIB-4（肝纤维化风险）",
+   "assertion_type": "advisory",
+   "input_fields": [
+    "CHEM.丙氨酸氨基转移酶",
+    "CHEM.天门冬氨基转移酶",
+    "BLD.血小板",
+    "年龄"
+   ],
+   "missing_data_policy": "block",
+   "logic": "两套切点按用途显式选择：HCV 1.45/3.25；NAFLD 1.30/2.67；报告须写明用哪套",
+   "threshold_value": [
+    1.45,
+    3.25,
+    1.3,
+    2.67
+   ],
+   "threshold_unit": "",
+   "threshold_scope": "成人；不适用于 <35 岁（FIB-4 在年轻人假阳性高）",
+   "output_text_zh": "FIB-4 用于判断肝纤维化风险等级，不诊断肝纤维化",
+   "evidence_refs": [
+    "P_FIB4"
+   ]
+  },
+  {
+   "rule_id": "R.METSYN",
+   "rule_version": "1.0",
+   "name": "代谢综合征（三套标准并列）",
+   "assertion_type": "advisory",
+   "input_fields": [
+    "CHEM.甘油三酯",
+    "CHEM.高密度脂蛋白胆固醇",
+    "CHEM.葡萄糖",
+    "VITAL.体重指数",
+    "VITAL.收缩压",
+    "VITAL.舒张压",
+    "VITAL.腰围"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "CDS 2004 ∥ 2007 血脂指南版 ∥ IDF 2005 华人标准，三套并列输出、禁止静默择一；腰围缺失 → 该标准不可评估",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "成人；性别阈值按标准拆分",
+   "output_text_zh": "代谢综合征是「凑够几项」的判定，三套标准结论可能不同（并列给出）",
+   "evidence_refs": [
+    "P_CDR2025"
+   ]
+  },
+  {
+   "rule_id": "R.ASCVD.CHINAPAR",
+   "rule_version": "1.0",
+   "name": "China-PAR 10 年 ASCVD 风险",
+   "assertion_type": "informational",
+   "input_fields": [
+    "年龄",
+    "性别",
+    "地区",
+    "VITAL.体重指数",
+    "VITAL.腰围",
+    "CHEM.总胆固醇",
+    "CHEM.高密度脂蛋白胆固醇",
+    "VITAL.收缩压",
+    "吸烟",
+    "糖尿病"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "男性方程；年龄适用范围 35–74 岁（超出即外推并显式警告）；家族史未知时按「无」代入并做敏感性",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "35–74 岁、无 ASCVD",
+   "output_text_zh": "10 年风险是概率不是命运；用于决定是否需要更严格干预",
+   "evidence_refs": [
+    "P_CDR2025"
+   ]
+  },
+  {
+   "rule_id": "R.IMAGING.MODALITY",
+   "rule_version": "1.0",
+   "name": "影像发现的检查方式纪律",
+   "assertion_type": "informational",
+   "input_fields": [
+    "影像.检查方式",
+    "影像.尺寸"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "同一发现只与**同一检查方式**的既往结果比较；换方式/换层厚/换机构 → 标「本次为新基线」，⛔ 不写升高/降低；不同方式的发现不得互相推断",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "所有影像类发现",
+   "output_text_zh": "尺寸变化只在同一种检查方式内比较",
+   "evidence_refs": [
+    "P_NODULE_FU"
+   ]
+  },
+  {
+   "rule_id": "R.IMAGING.LIVER_HEMANGIOMA",
+   "rule_version": "1.0",
+   "name": "肝血管瘤（彩超）",
+   "assertion_type": "informational",
+   "input_fields": [
+    "影像.肝脏.彩超"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "多数为良性，按机构原文随访；测量者差异可造成 ±1cm 级波动，不与 CT 结果互推",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "彩超发现的肝脏高回声结节",
+   "output_text_zh": "这是影像描述，不是诊断；随访节奏以机构原文与专科医师意见为准",
+   "evidence_refs": [
+    "P_NODULE_FU"
+   ]
+  },
+  {
+   "rule_id": "R.IMAGING.THYROID",
+   "rule_version": "1.0",
+   "name": "甲状腺结节（TI-RADS/C-TIRADS）",
+   "assertion_type": "informational",
+   "input_fields": [
+    "影像.甲状腺.彩超"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "分级与随访间隔以机构原文为准；⛔ 本库不编码随访频率（本地未收原文，不凭记忆给）",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "超声发现的甲状腺结节",
+   "output_text_zh": "分级决定随访节奏；本报告只转述机构建议",
+   "evidence_refs": [
+    "P_THYROID_FU"
+   ]
+  },
+  {
+   "rule_id": "R.IMAGING.BONE",
+   "rule_version": "1.0",
+   "name": "骨密度 T 值判读（WHO 口径）",
+   "assertion_type": "informational",
+   "input_fields": [
+    "影像.骨密度.T值"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "T ≥ −1.0 正常；−1.0 ~ −2.5 骨量减少；≤ −2.5 骨质疏松（以报告自带结论为准）",
+   "threshold_value": [
+    -1.0,
+    -2.5
+   ],
+   "threshold_unit": "T 值",
+   "threshold_scope": "绝经后女性与 50 岁以上男性为主要适应人群",
+   "output_text_zh": "T 值越低骨量越少；是否治疗由专科医师定",
+   "evidence_refs": [
+    "P_BONE_T"
+   ]
+  },
+  {
+   "rule_id": "R.SMOKE.PACKYEAR",
+   "rule_version": "1.0",
+   "name": "吸烟包年数与肺癌筛查资格",
+   "assertion_type": "advisory",
+   "input_fields": [
+    "吸烟.每天包数",
+    "吸烟.年数"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "包年数 = 每天包数 × 吸烟年数；中国指南吸烟门槛 ≥30 包年（且戒烟<15 年）；吸烟年数未采集 → **不断言筛查资格**，只给补采集动作",
+   "threshold_value": [
+    30
+   ],
+   "threshold_unit": "包年",
+   "threshold_scope": "50–74 岁人群的筛查资格判定",
+   "output_text_zh": "包年数决定够不够格进肺癌筛查；未采集就不下结论",
+   "evidence_refs": [
+    "P_LUNG2021"
+   ]
+  },
+  {
+   "rule_id": "R.REDFLAG.A",
+   "rule_version": "1.0",
+   "name": "A 类重要异常结果（危急值）",
+   "assertion_type": "red_flag",
+   "input_fields": [
+    "血常规",
+    "肝功能",
+    "肾功能",
+    "血糖"
+   ],
+   "missing_data_policy": "block",
+   "logic": "命中任一 A 类阈值 → **中断常规流程、置顶直报**；⛔ 不写「好消息」、不写免责套话；阈值可被机构清单覆盖",
+   "threshold_value": [
+    60,
+    30,
+    1000,
+    1.0,
+    0.5,
+    15,
+    5,
+    707,
+    2.8,
+    3.9,
+    16.7
+   ],
+   "threshold_unit": "",
+   "threshold_scope": "按引擎 redflags.DEFAULT_A（12 条）",
+   "output_text_zh": "出现需要立即就医的结果——不要等，立即携报告就医",
+   "evidence_refs": [
+    "P_AB2019"
+   ]
+  },
+  {
+   "rule_id": "R.REDFLAG.AB_STATEMENT",
+   "rule_version": "1.0",
+   "name": "「红」≠ 官方 A 类（声明纪律）",
+   "assertion_type": "informational",
+   "input_fields": [],
+   "missing_data_policy": "partial",
+   "logic": "报告分级的「红」是给个人健康管理用的（更细、更早）；官方 A/B 类是机构紧急召回口径，门槛高得多（血压 ≥180/110 伴急性症状、ALT ≥15 倍上限、肌酐 ≥707）",
+   "threshold_value": [
+    180,
+    110,
+    15,
+    707
+   ],
+   "threshold_unit": "",
+   "threshold_scope": "全报告",
+   "output_text_zh": "本报告的「红」不等于医院的危急值——它更早、更细，是为了让你有时间行动",
+   "evidence_refs": [
+    "P_AB2019"
+   ]
+  },
+  {
+   "rule_id": "R.DATA.HDL_CONST",
+   "rule_version": "1.0",
+   "name": "数据质量：多项同值的「无法核实」措辞",
+   "assertion_type": "informational",
+   "input_fields": [
+    "数据质量.同值序列"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "若某指标多年同值（如一位小数不差），生物概率极低 → 提示可能未重测；措辞锁「**无法核实**」，⛔ 不指控机构；给出可执行的解答路径（复查一次）",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "全报告",
+   "output_text_zh": "这个数字需要核实——复查一次即可解开",
+   "evidence_refs": [
+    "P_AB2019"
+   ]
+  },
+  {
+   "rule_id": "R.DATA.HEIGHT",
+   "rule_version": "1.0",
+   "name": "身高异常与 BMI 打折",
+   "assertion_type": "informational",
+   "input_fields": [
+    "VITAL.身高"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "成年身高跨年极差 >1cm 即属记录异常；BMI 及派生结论标不可评估/打折",
+   "threshold_value": [
+    1.0
+   ],
+   "threshold_unit": "cm",
+   "threshold_scope": "成人",
+   "output_text_zh": "身高数值本身不影响判断，但 BMI 相关结论要打折看",
+   "evidence_refs": [
+    "P_GUIDE2025"
+   ]
+  },
+  {
+   "rule_id": "R.SCREEN.BASELINE",
+   "rule_version": "1.0",
+   "name": "基本体检项目完整性（附录一）",
+   "assertion_type": "informational",
+   "input_fields": [
+    "覆盖率"
+   ],
+   "missing_data_policy": "partial",
+   "logic": "对照 2025 版基本体检项目逐项×逐年判「做过没有」；覆盖率 = 全覆盖项数 ÷ 应查项数",
+   "threshold_value": "",
+   "threshold_unit": "",
+   "threshold_scope": "≥18 岁成人（分性别/年龄适用项）",
+   "output_text_zh": "附录一只评估「这次体检做得全不全」，不给行动",
+   "evidence_refs": [
+    "P_GUIDE2025"
+   ]
+  },
+  {
+   "rule_id": "R.BP.HOME",
+   "rule_version": "1.0",
+   "name": "家庭血压（解除单次诊室血压疑点）",
+   "assertion_type": "advisory",
+   "input_fields": [
+    "家庭自测血压（7 天平均，带记录）"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "家庭血压 7 天平均 <130/80 → 该项按「未达高血压」处理，报告级别可降为 🟢（并注明那一次按偶发读数）；≥135/85 → 升级（家庭血压标准比诊室更严）并转心内科；未采集 → 保持 🟡 且卡片给出补测动作。⚠️ 降级不改变「危险分层按无高血压代入」这一前提，前提仍须写在表头",
+   "threshold_value": [
+    130,
+    80,
+    135,
+    85
+   ],
+   "threshold_unit": "mmHg",
+   "threshold_scope": "成人；上臂式电子血压计、坐位静息 5 分钟、早晚各 1 次连测 7 天",
+   "output_text_zh": "平时自测的血压 7 天平均如果在 130/80 以下，那次偏高读数更可能只是一次偶发；如果 ≥135/85，就按高血压认真对待",
+   "evidence_refs": [
+    "P_HTN2024"
+   ]
+  },
+  {
+   "rule_id": "R.FU.EXEC",
+   "rule_version": "1.0",
+   "name": "机构建议的进一步检查是否执行",
+   "assertion_type": "informational",
+   "input_fields": [
+    "机构建议的进一步检查/随访执行情况"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "数据源 = advice.json 主题（含「建议增强 / 建议进一步检查 / 随诊」）+ 影像台账。已执行 → 该卡片必须据此更新，并把结果作为**新证据**登记进底稿（§12.2 收口规则）；未执行 → 保持卡片与期限（这正是「拖了两年」类问题的来源）；不记得 → 卡片写「若已做过，请带结果找医生复核结论」",
+   "threshold_value": [],
+   "threshold_unit": "",
+   "threshold_scope": "所有「机构建议过、数据里未见执行」的检查",
+   "output_text_zh": "机构建议过的那几项检查，后来做过吗？做过就带结果复核；没做就排进这次的行动",
+   "evidence_refs": [
+    "P_AB2019"
+   ]
+  },
+  {
+   "rule_id": "R.LIFESTYLE.ALCOHOL",
+   "rule_version": "1.0",
+   "name": "饮酒（甘油三酯/GGT 上升的解释项）",
+   "assertion_type": "informational",
+   "input_fields": [
+    "饮酒（频次/量）"
+   ],
+   "missing_data_policy": "downgrade",
+   "logic": "甘油三酯持续异常或谷氨酰转肽酶上升时，饮酒是有力的解释项之一（GGT 对酒精与脂肪代谢敏感）；未采集 → 不猜，写「饮酒史未采集」并把该问题排进问诊",
+   "threshold_value": [],
+   "threshold_unit": "",
+   "threshold_scope": "成人",
+   "output_text_zh": "饮酒的频率和量是多少？它会影响甘油三酯与谷氨酰转肽酶的解释",
+   "evidence_refs": [
+    "P_CDR2025"
+   ]
+  }
+ ]
+}
