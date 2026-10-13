@@ -1,0 +1,447 @@
+{
+  "version": "2026.10.01",
+  "source_file": "体检分析/ref/cvi_table.csv",
+  "cva_assumed": 3.0,
+  "entries": {
+    "IMM.总前列腺特异性抗原": {
+      "cvi": 6.8,
+      "cvi_low": 6.199,
+      "cvi_high": 7.499,
+      "n_studies": 1,
+      "eflm_analyte": "Prostate specific antigen (PSA)",
+      "eflm_id": 232,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "IMM.甲胎蛋白": {
+      "cvi": 4.5643,
+      "cvi_low": 4.1,
+      "cvi_high": 26.67,
+      "n_studies": 2,
+      "eflm_analyte": "Alphafetoprotein",
+      "eflm_id": 670,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "IMM.癌胚抗原": {
+      "cvi": 6.8327,
+      "cvi_low": 6.4,
+      "cvi_high": 30.87,
+      "n_studies": 3,
+      "eflm_analyte": "Carcinoembryonic antigen (CEA)",
+      "eflm_id": 813,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.丙氨酸氨基转移酶": {
+      "cvi": 12.6446,
+      "cvi_low": 9.3,
+      "cvi_high": 17.3,
+      "n_studies": 6,
+      "eflm_analyte": "Alanine transaminase (ALT)",
+      "eflm_id": 1495,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.乳酸脱氢酶": {
+      "cvi": 4.3614,
+      "cvi_low": 3.3,
+      "cvi_high": 5.2,
+      "n_studies": 2,
+      "eflm_analyte": "Lactate dehydrogenase (LDH) activity",
+      "eflm_id": 728,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.低密度脂蛋白胆固醇": {
+      "cvi": 7.4341,
+      "cvi_low": 7.0,
+      "cvi_high": 8.46,
+      "n_studies": 21,
+      "eflm_analyte": "LDL Cholesterol",
+      "eflm_id": 1498,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.天门冬氨基转移酶": {
+      "cvi": 8.5815,
+      "cvi_low": 6.2,
+      "cvi_high": 13.8,
+      "n_studies": 5,
+      "eflm_analyte": "Aspartate transaminase (AST)",
+      "eflm_id": 1496,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.尿素": {
+      "cvi": 13.1404,
+      "cvi_low": 11.2,
+      "cvi_high": 14.1,
+      "n_studies": 14,
+      "eflm_analyte": "Urea",
+      "eflm_id": 1514,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.尿酸": {
+      "cvi": 8.2506,
+      "cvi_low": 5.5,
+      "cvi_high": 9.8,
+      "n_studies": 16,
+      "eflm_analyte": "Urate",
+      "eflm_id": 1639,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.总胆固醇": {
+      "cvi": 5.260527039212095,
+      "cvi_low": 4.798527038391797,
+      "cvi_high": 6.2,
+      "n_studies": 36,
+      "eflm_analyte": "Cholesterol",
+      "eflm_id": 492,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.总胆红素": {
+      "cvi": 20.1766,
+      "cvi_low": 18.5,
+      "cvi_high": 27.2,
+      "n_studies": 8,
+      "eflm_analyte": "Bilirubin",
+      "eflm_id": 540,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.总蛋白": {
+      "cvi": 2.6,
+      "cvi_low": 1.7,
+      "cvi_high": 2.8,
+      "n_studies": 13,
+      "eflm_analyte": "Protein (total)",
+      "eflm_id": 1554,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.甘油三酯": {
+      "cvi": 19.7607,
+      "cvi_low": 17.5,
+      "cvi_high": 21.4,
+      "n_studies": 42,
+      "eflm_analyte": "Triglycerides",
+      "eflm_id": 976,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.白蛋白": {
+      "cvi": 2.5,
+      "cvi_low": 1.2501,
+      "cvi_high": 3.0,
+      "n_studies": 16,
+      "eflm_analyte": "Albumin",
+      "eflm_id": 1515,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.直接胆红素": {
+      "cvi": 19.5498,
+      "cvi_low": 14.0,
+      "cvi_high": 21.8,
+      "n_studies": 3,
+      "eflm_analyte": "Bilirubin - conjugated (direct)",
+      "eflm_id": 230,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.肌酐": {
+      "cvi": 4.3864,
+      "cvi_low": 2.3,
+      "cvi_high": 4.9,
+      "n_studies": 17,
+      "eflm_analyte": "Creatinine",
+      "eflm_id": 1501,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.肌酸激酶": {
+      "cvi": 14.1244,
+      "cvi_low": 13.4,
+      "cvi_high": 29.5,
+      "n_studies": 3,
+      "eflm_analyte": "Creatine Kinase",
+      "eflm_id": 1502,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.葡萄糖": {
+      "cvi": 4.6687,
+      "cvi_low": 3.0,
+      "cvi_high": 5.4199,
+      "n_studies": 12,
+      "eflm_analyte": "Glucose",
+      "eflm_id": 1518,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.血清钙测定": {
+      "cvi": 1.808,
+      "cvi_low": 0.8,
+      "cvi_high": 2.3,
+      "n_studies": 20,
+      "eflm_analyte": "Calcium (Ca)",
+      "eflm_id": 1087,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.谷氨酰转肽酶": {
+      "cvi": 8.2949,
+      "cvi_low": 6.7,
+      "cvi_high": 13.4,
+      "n_studies": 6,
+      "eflm_analyte": "g-glutamyl transferase activity",
+      "eflm_id": 994,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "CHEM.高密度脂蛋白胆固醇": {
+      "cvi": 5.7385,
+      "cvi_low": 5.2808,
+      "cvi_high": 8.205,
+      "n_studies": 36,
+      "eflm_analyte": "HDL cholesterol",
+      "eflm_id": 106,
+      "matrix": "Serum/plasma",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.中性粒细胞百分比": {
+      "cvi": 12.5456,
+      "cvi_low": 6.3,
+      "cvi_high": 26.9,
+      "n_studies": 9,
+      "eflm_analyte": "Neutrophils",
+      "eflm_id": 1533,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.中性粒细胞绝对值": {
+      "cvi": 12.5456,
+      "cvi_low": 6.3,
+      "cvi_high": 26.9,
+      "n_studies": 9,
+      "eflm_analyte": "Neutrophils",
+      "eflm_id": 1533,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.单核细胞百分比": {
+      "cvi": 13.9847,
+      "cvi_low": 11.07,
+      "cvi_high": 19.3,
+      "n_studies": 6,
+      "eflm_analyte": "Monocytes",
+      "eflm_id": 1535,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.单核细胞绝对值": {
+      "cvi": 13.9847,
+      "cvi_low": 11.07,
+      "cvi_high": 19.3,
+      "n_studies": 6,
+      "eflm_analyte": "Monocytes",
+      "eflm_id": 1535,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.嗜碱性粒细胞百分比": {
+      "cvi": 12.6039,
+      "cvi_low": 11.36,
+      "cvi_high": 32.0,
+      "n_studies": 5,
+      "eflm_analyte": "Basophils",
+      "eflm_id": 1537,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.嗜碱性粒细胞绝对值": {
+      "cvi": 12.6039,
+      "cvi_low": 11.36,
+      "cvi_high": 32.0,
+      "n_studies": 5,
+      "eflm_analyte": "Basophils",
+      "eflm_id": 1537,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.嗜酸性粒细胞百分比": {
+      "cvi": 15.0781,
+      "cvi_low": 10.11,
+      "cvi_high": 26.9,
+      "n_studies": 6,
+      "eflm_analyte": "Eosinophils",
+      "eflm_id": 1536,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.嗜酸性粒细胞绝对值": {
+      "cvi": 15.0781,
+      "cvi_low": 10.11,
+      "cvi_high": 26.9,
+      "n_studies": 6,
+      "eflm_analyte": "Eosinophils",
+      "eflm_id": 1536,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.大血小板比率": {
+      "cvi": 6.7801,
+      "cvi_low": 6.6,
+      "cvi_high": 7.02,
+      "n_studies": 2,
+      "eflm_analyte": "Platelet larger cell ratio (P-LCR) ",
+      "eflm_id": 1542,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.平均红细胞体积": {
+      "cvi": 0.7713,
+      "cvi_low": 0.72,
+      "cvi_high": 1.0608,
+      "n_studies": 12,
+      "eflm_analyte": "Mean corpuscular volume (MCV) ",
+      "eflm_id": 1527,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.平均红细胞血红蛋白含量": {
+      "cvi": 0.75,
+      "cvi_low": 0.3,
+      "cvi_high": 1.7,
+      "n_studies": 9,
+      "eflm_analyte": "Mean corpuscular haemoglobin (MCH)",
+      "eflm_id": 1525,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.平均红细胞血红蛋白浓度": {
+      "cvi": 0.97,
+      "cvi_low": 0.8,
+      "cvi_high": 1.047,
+      "n_studies": 11,
+      "eflm_analyte": "Mean corpuscular haemoglobin concentration (MCHC)",
+      "eflm_id": 1526,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.平均血小板体积": {
+      "cvi": 2.2925,
+      "cvi_low": 2.24,
+      "cvi_high": 4.3,
+      "n_studies": 4,
+      "eflm_analyte": "Mean platelet volume (MPV)",
+      "eflm_id": 1540,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.淋巴细胞百分比": {
+      "cvi": 10.5275,
+      "cvi_low": 9.81,
+      "cvi_high": 14.7,
+      "n_studies": 8,
+      "eflm_analyte": "Lymphocytes",
+      "eflm_id": 1534,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.淋巴细胞绝对值": {
+      "cvi": 10.5275,
+      "cvi_low": 9.81,
+      "cvi_high": 14.7,
+      "n_studies": 8,
+      "eflm_analyte": "Lymphocytes",
+      "eflm_id": 1534,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.白细胞": {
+      "cvi": 11.1,
+      "cvi_low": 8.1292,
+      "cvi_high": 12.82,
+      "n_studies": 12,
+      "eflm_analyte": "Leukocytes",
+      "eflm_id": 1532,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.红细胞": {
+      "cvi": 2.6127,
+      "cvi_low": 1.4,
+      "cvi_high": 4.0,
+      "n_studies": 8,
+      "eflm_analyte": "Erythrocytes",
+      "eflm_id": 1523,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.红细胞分布宽度SD": {
+      "cvi": 1.65,
+      "cvi_low": 1.0,
+      "cvi_high": 3.7,
+      "n_studies": 8,
+      "eflm_analyte": "Red cell distribution wide standard deviation (RDW-SD)",
+      "eflm_id": 1528,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.血小板": {
+      "cvi": 7.2596,
+      "cvi_low": 6.6,
+      "cvi_high": 10.2,
+      "n_studies": 8,
+      "eflm_analyte": "Thrombocytes",
+      "eflm_id": 1538,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.血小板体积分布宽度": {
+      "cvi": 3.8444,
+      "cvi_low": 3.2,
+      "cvi_high": 4.23,
+      "n_studies": 3,
+      "eflm_analyte": "Platelet distribution wide (PDW) ",
+      "eflm_id": 1541,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.血小板压积": {
+      "cvi": 6.436,
+      "cvi_low": 6.4,
+      "cvi_high": 11.6,
+      "n_studies": 3,
+      "eflm_analyte": "Plateletcrit ",
+      "eflm_id": 1539,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.血红蛋白浓度": {
+      "cvi": 2.6729,
+      "cvi_low": 1.7633,
+      "cvi_high": 2.74,
+      "n_studies": 16,
+      "eflm_analyte": "Haemoglobin (Hb)",
+      "eflm_id": 1522,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    },
+    "BLD.血细胞压积": {
+      "cvi": 2.8078,
+      "cvi_low": 2.2,
+      "cvi_high": 3.12,
+      "n_studies": 8,
+      "eflm_analyte": "Haematocrit (Hct)",
+      "eflm_id": 1524,
+      "matrix": "Whole Blood",
+      "source": "EFLM Biological Variation Database（合并估计值 median）"
+    }
+  }
+}

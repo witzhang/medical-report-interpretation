@@ -1,0 +1,210 @@
+{
+  "title": "因果归并：这些发现是怎么连起来的",
+  "note": "实线 = 有依据的关联　|　虚线 = 推断，尚待确认",
+  "layers": [
+    {
+      "label": "① 报告里的发现",
+      "nodes": [
+        {
+          "id": "bp",
+          "text": "血压 145/92",
+          "note": "已达高血压标准",
+          "level": "hot"
+        },
+        {
+          "id": "glu",
+          "text": "血糖 6.44 · 糖化血红蛋白 6.3%",
+          "note": "已达糖尿病前期",
+          "level": "hot"
+        },
+        {
+          "id": "tg",
+          "text": "甘油三酯 2.27",
+          "note": "非 HDL-C 4.91 已入「升高」档",
+          "level": "mid"
+        },
+        {
+          "id": "lft",
+          "text": "肝酶 ALT 74 · GGT 92",
+          "note": "中度脂肪肝",
+          "level": "mid"
+        },
+        {
+          "id": "ua",
+          "text": "尿酸 541",
+          "note": "三年均超标",
+          "level": "mid"
+        },
+        {
+          "id": "bmi",
+          "text": "BMI 27.1",
+          "note": "三年增重 5 kg",
+          "level": "mid"
+        },
+        {
+          "id": "scr",
+          "text": "肾脏过滤能力三年下行",
+          "note": "年降 4.1，是同龄人自然下降的 4～10 倍",
+          "level": "mid"
+        },
+        {
+          "id": "smoke",
+          "text": "吸烟 每日约 10 支",
+          "note": "问诊补充",
+          "level": "mid"
+        }
+      ]
+    },
+    {
+      "label": "② 共同上游",
+      "nodes": [
+        {
+          "id": "met",
+          "text": "代谢出了问题",
+          "note": "六项不是六个毛病，是一件事；真正的上游是体重",
+          "level": "hot"
+        },
+        {
+          "id": "tob",
+          "text": "烟草暴露",
+          "note": "唯一完全由你自己控制的变量",
+          "level": "mid"
+        }
+      ]
+    },
+    {
+      "label": "③ 结论",
+      "nodes": [
+        {
+          "id": "mets",
+          "text": "代谢综合征 · 高度可疑",
+          "note": "4 项已符合，但缺腰围，无法下结论",
+          "level": "hot"
+        },
+        {
+          "id": "kid",
+          "text": "肾可能已被牵连",
+          "note": "方向明确，幅度待复查确认",
+          "level": "mid"
+        },
+        {
+          "id": "cvs",
+          "text": "心血管风险未分层",
+          "note": "需结合血压、血脂、吸烟一起算",
+          "level": "info"
+        }
+      ]
+    },
+    {
+      "label": "④ 该做什么",
+      "nodes": [
+        {
+          "id": "w",
+          "text": "减重 4～8 kg",
+          "note": "六项的共同抓手",
+          "level": "ok"
+        },
+        {
+          "id": "doc",
+          "text": "2 周内 心内科 + 内分泌科",
+          "note": "现在是可逆窗口",
+          "level": "ok"
+        },
+        {
+          "id": "waist",
+          "text": "补测腰围",
+          "note": "30 秒，决定结论能否成立",
+          "level": "ok"
+        },
+        {
+          "id": "acr",
+          "text": "查尿微量白蛋白 / ACR",
+          "note": "1～3 个月内",
+          "level": "ok"
+        },
+        {
+          "id": "quit",
+          "text": "戒烟",
+          "note": "同时改善血压、血脂、肾",
+          "level": "ok"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "bp",
+      "met"
+    ],
+    [
+      "glu",
+      "met"
+    ],
+    [
+      "tg",
+      "met"
+    ],
+    [
+      "lft",
+      "met"
+    ],
+    [
+      "ua",
+      "met"
+    ],
+    [
+      "bmi",
+      "met"
+    ],
+    [
+      "met",
+      "mets"
+    ],
+    [
+      "met",
+      "kid"
+    ],
+    [
+      "met",
+      "cvs"
+    ],
+    [
+      "scr",
+      "kid"
+    ],
+    [
+      "smoke",
+      "tob"
+    ],
+    [
+      "tob",
+      "cvs"
+    ],
+    [
+      "tob",
+      "kid"
+    ],
+    [
+      "mets",
+      "w"
+    ],
+    [
+      "mets",
+      "doc"
+    ],
+    [
+      "kid",
+      "acr"
+    ],
+    [
+      "tob",
+      "quit"
+    ]
+  ],
+  "dashed": [
+    [
+      "mets",
+      "waist"
+    ]
+  ]
+}

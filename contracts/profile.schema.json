@@ -1,0 +1,97 @@
+{
+  "_说明": "个体信息（profile.json）字段规范 —— 运行期问诊产物，**不进 skill 目录**；由 --profile / CHECKUP_PROFILE 指向，或在数据根 checkup-engine/profile.json。下表『引擎/对账层读取』的字段是代码真实读取的；下划线开头的键（_comment/_note/_updated/_source/_not_collected/…）与 org_id/sex 等注释键引擎一律忽略，仅作审计留痕。",
+  "_版本": "1.1（2026-10-10）",
+  "_载入顺序": "--profile > CHECKUP_PROFILE > <数据根>/checkup-engine/profile.json；文件缺失/必填字段缺失时**不猜**：涉及个体信息的派生量会如实标『未确认/不可评估』，必填项缺失则直接停下报错。",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "checkup profile",
+  "type": "object",
+  "required": ["smoking", "family_history_ascvd", "diabetes", "antihypertensive"],
+  "_required_说明": "smoking.current / family_history_ascvd / diabetes / antihypertensive 由 reconcile 层硬性读取（缺失会停下点名报错）；其余字段缺失时引擎按各自『未确认/默认』口径处理并在报告里声明——见每条的 description。",
+  "properties": {
+    "smoking": {
+      "type": "object",
+      "required": ["current"],
+      "properties": {
+        "current": {
+          "type": "boolean",
+          "description": "现在吸烟？—— 进入 China-PAR 与血脂危险因素计数"
+        },
+        "pack_years": {
+          "type": ["number", "null"],
+          "description": "包年数（可选）。肺癌筛查门槛类判断用；缺省时不得由 agent 手算进结论，只能如实说『未采集』"
+        },
+        "note": {
+          "type": "string",
+          "description": "问诊原文备注（如『3 天 2 包、已吸 16 年』），不参与计算"
+        }
+      }
+    },
+    "family_history_ascvd": {
+      "type": "object",
+      "required": ["known", "value"],
+      "properties": {
+        "known": {
+          "type": "boolean",
+          "description": "家族史是否问清：false=未知 → 引擎按『无』计算并输出敏感性两列（不假装知道）"
+        },
+        "value": {
+          "type": "boolean",
+          "description": "一级亲属早发心脑血管病（男<55 / 女<65 发病）"
+        },
+        "note": {
+          "type": "string",
+          "description": "问诊原文备注（如『母亲 60 岁后发病，未到岁数级』）"
+        }
+      }
+    },
+    "hypertension_diagnosed": {
+      "type": ["boolean", "null"],
+      "description": "已确诊高血压？null/缺省 = **未确认** → 血脂危险分层与部分组合量按『不可评估』处理（不猜）"
+    },
+    "diabetes": {
+      "type": "boolean",
+      "description": "已确诊糖尿病（进入 China-PAR 与危险因素计数）"
+    },
+    "antihypertensive": {
+      "type": "boolean",
+      "description": "服降压药（影响血压读数归因与 China-PAR）"
+    },
+    "lipid_lowering": {
+      "type": "boolean",
+      "description": "服降脂药：true 时当次血脂不作为『干预前基线』（可配 pretreatment_lipids）"
+    },
+    "pretreatment_lipids": {
+      "type": "object",
+      "description": "干预前血脂水平（服降脂药时有意义；known=true 且至少一项非空才启用，缺失项回落到当次值并在报告注明）",
+      "properties": {
+        "known": {"type": "boolean", "description": "干预前水平是否可得"},
+        "tc": {"type": ["number", "null"]},
+        "ldl": {"type": ["number", "null"]},
+        "hdl": {"type": ["number", "null"]}
+      }
+    },
+    "ascvd_diagnosed": {
+      "type": "boolean",
+      "description": "已有 ASCVD 病史（可选；true → 二级预防路径。缺省按一级预防）"
+    },
+    "severe_ascvd_events": {
+      "type": ["integer", "null"],
+      "description": "二级预防用：严重 ASCVD 事件次数（缺省按 0；与 ascvd_high_risk_factors 共同决定『超高危/极高危』）"
+    },
+    "ascvd_high_risk_factors": {
+      "type": ["integer", "null"],
+      "description": "二级预防用：ASCVD 高危险因素个数（缺省按 0）"
+    },
+    "region": {
+      "type": "object",
+      "description": "China-PAR 地区/城乡系数；**缺省 north/urban 均按 true** 并在报告表头声明该假设",
+      "properties": {
+        "north": {"type": "boolean"},
+        "urban": {"type": "boolean"},
+        "note": {"type": "string"}
+      }
+    }
+  },
+  "additionalProperties": true,
+  "_additionalProperties_说明": "未列出的键引擎一律忽略（用户可放过程记录）。建议过程性备注用 _ 开头；常见的注释键：_comment / _note / _updated / _source / _not_collected / _interview_round2 / org_id / sex。"
+}

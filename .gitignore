@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+*.egg-info/
+# 运行期产物（一律写用户工作目录；这里兜底防止误提交）
+体检解读_out/
+out/
+artifacts/
+*.log
+
+# 资产/验收件与求解产物（用户目录产物；兜底防误提交）
+*.accept.json
+*.asset.json
+bundle.json
+抽检单*.md
+写作前置自检*.md
+求解_*.md
+pool_index.json
+audit_seed_cross_org.json

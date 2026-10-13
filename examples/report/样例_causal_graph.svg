@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1186" height="681" viewBox="0 0 1186 681" font-family="-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+<rect width="1186" height="681" fill="#ffffff"/>
+<text x="30" y="30" font-size="16.5" font-weight="700" fill="#1a1a1a">因果归并：这些发现是怎么连起来的</text>
+<text x="30" y="54" font-size="13" font-weight="700" fill="#6b6b6b" letter-spacing="0.5">① 报告里的发现</text>
+<text x="337.925" y="54" font-size="13" font-weight="700" fill="#6b6b6b" letter-spacing="0.5">② 共同上游</text>
+<text x="680.925" y="54" font-size="13" font-weight="700" fill="#6b6b6b" letter-spacing="0.5">③ 结论</text>
+<text x="956.0749999999999" y="54" font-size="13" font-weight="700" fill="#6b6b6b" letter-spacing="0.5">④ 该做什么</text>
+<path d="M 139.9,103.5 C 238.9,103.5 238.9,325.5 337.9,325.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 331.9,321.5 L 337.9,325.5 L 331.9,329.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 270.1,177.5 C 304.0,177.5 304.0,325.5 337.9,325.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 331.9,321.5 L 337.9,325.5 L 331.9,329.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 225.9,251.5 C 281.9,251.5 281.9,325.5 337.9,325.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 331.9,321.5 L 337.9,325.5 L 331.9,329.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 209.2,325.5 C 273.6,325.5 273.6,325.5 337.9,325.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 331.9,321.5 L 337.9,325.5 L 331.9,329.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 116.8,399.5 C 227.4,399.5 227.4,325.5 337.9,325.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 331.9,321.5 L 337.9,325.5 L 331.9,329.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 135.6,473.5 C 236.8,473.5 236.8,325.5 337.9,325.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 331.9,321.5 L 337.9,325.5 L 331.9,329.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 618.9,325.5 C 649.9,325.5 649.9,288.5 680.9,288.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 674.9,284.5 L 680.9,288.5 L 674.9,292.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 618.9,325.5 C 649.9,325.5 649.9,362.5 680.9,362.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 674.9,358.5 L 680.9,362.5 L 674.9,366.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 618.9,325.5 C 649.9,325.5 649.9,436.5 680.9,436.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 674.9,432.5 L 680.9,436.5 L 674.9,440.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 275.9,547.5 C 478.4,547.5 478.4,362.5 680.9,362.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 674.9,358.5 L 680.9,362.5 L 674.9,366.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 180.5,621.5 C 259.2,621.5 259.2,399.5 337.9,399.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 331.9,395.5 L 337.9,399.5 L 331.9,403.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 515.4,399.5 C 598.2,399.5 598.2,436.5 680.9,436.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 674.9,432.5 L 680.9,436.5 L 674.9,440.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 515.4,399.5 C 598.2,399.5 598.2,362.5 680.9,362.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 674.9,358.5 L 680.9,362.5 L 674.9,366.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 894.1,288.5 C 925.1,288.5 925.1,214.5 956.1,214.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 950.1,210.5 L 956.1,214.5 L 950.1,218.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 894.1,288.5 C 925.1,288.5 925.1,288.5 956.1,288.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 950.1,284.5 L 956.1,288.5 L 950.1,292.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 846.9,362.5 C 901.5,362.5 901.5,436.5 956.1,436.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 950.1,432.5 L 956.1,436.5 L 950.1,440.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 515.4,399.5 C 735.8,399.5 735.8,510.5 956.1,510.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 950.1,506.5 L 956.1,510.5 L 950.1,514.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<path d="M 894.1,288.5 C 925.1,288.5 925.1,362.5 956.1,362.5" fill="none" stroke="#b9c2cc" stroke-width="1.4" stroke-dasharray="5 4"/>
+<path d="M 950.1,358.5 L 956.1,362.5 L 950.1,366.5" fill="none" stroke="#b9c2cc" stroke-width="1.4"/>
+<rect x="30" y="74.0" width="109.9" height="59" rx="5" fill="#fdf4f3" stroke="#e8c9c5" stroke-width="1"/>
+<rect x="30" y="74.0" width="4" height="59" rx="2" fill="#c0392b"/>
+<text x="44" y="99.0" font-size="14" font-weight="600" fill="#242424">血压 145/92</text>
+<text x="44" y="117.0" font-size="11.5" fill="#6f6f6f">已达高血压标准</text>
+<rect x="30" y="148.0" width="240.10000000000002" height="59" rx="5" fill="#fdf4f3" stroke="#e8c9c5" stroke-width="1"/>
+<rect x="30" y="148.0" width="4" height="59" rx="2" fill="#c0392b"/>
+<text x="44" y="173.0" font-size="14" font-weight="600" fill="#242424">血糖 6.44 · 糖化血红蛋白 6.3%</text>
+<text x="44" y="191.0" font-size="11.5" fill="#6f6f6f">已达糖尿病前期</text>
+<rect x="30" y="222.0" width="195.9" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="30" y="222.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="44" y="247.0" font-size="14" font-weight="600" fill="#242424">甘油三酯 2.27</text>
+<text x="44" y="265.0" font-size="11.5" fill="#6f6f6f">非 HDL-C 4.91 已入「升高」档</text>
+<rect x="30" y="296.0" width="179.20000000000002" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="30" y="296.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="44" y="321.0" font-size="14" font-weight="600" fill="#242424">肝酶 ALT 74 · GGT 92</text>
+<text x="44" y="339.0" font-size="11.5" fill="#6f6f6f">中度脂肪肝</text>
+<rect x="30" y="370.0" width="86.80000000000001" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="30" y="370.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="44" y="395.0" font-size="14" font-weight="600" fill="#242424">尿酸 541</text>
+<text x="44" y="413.0" font-size="11.5" fill="#6f6f6f">三年均超标</text>
+<rect x="30" y="444.0" width="105.625" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="30" y="444.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="44" y="469.0" font-size="14" font-weight="600" fill="#242424">BMI 27.1</text>
+<text x="44" y="487.0" font-size="11.5" fill="#6f6f6f">三年增重 5 kg</text>
+<rect x="30" y="518.0" width="245.925" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="30" y="518.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="44" y="543.0" font-size="14" font-weight="600" fill="#242424">肾脏过滤能力三年下行</text>
+<text x="44" y="561.0" font-size="11.5" fill="#6f6f6f">年降 4.1，是同龄人自然下降的 4～10 倍</text>
+<rect x="30" y="592.0" width="150.5" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="30" y="592.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="44" y="617.0" font-size="14" font-weight="600" fill="#242424">吸烟 每日约 10 支</text>
+<text x="44" y="635.0" font-size="11.5" fill="#6f6f6f">问诊补充</text>
+<rect x="337.925" y="296.0" width="281.0" height="59" rx="5" fill="#fdf4f3" stroke="#e8c9c5" stroke-width="1"/>
+<rect x="337.925" y="296.0" width="4" height="59" rx="2" fill="#c0392b"/>
+<text x="351.925" y="321.0" font-size="14" font-weight="600" fill="#242424">代谢出了问题</text>
+<text x="351.925" y="339.0" font-size="11.5" fill="#6f6f6f">六项不是六个毛病，是一件事；真正的上游是体重</text>
+<rect x="337.925" y="370.0" width="177.5" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="337.925" y="370.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="351.925" y="395.0" font-size="14" font-weight="600" fill="#242424">烟草暴露</text>
+<text x="351.925" y="413.0" font-size="11.5" fill="#6f6f6f">唯一完全由你自己控制的变量</text>
+<rect x="680.925" y="259.0" width="213.15" height="59" rx="5" fill="#fdf4f3" stroke="#e8c9c5" stroke-width="1"/>
+<rect x="680.925" y="259.0" width="4" height="59" rx="2" fill="#c0392b"/>
+<text x="694.925" y="284.0" font-size="14" font-weight="600" fill="#242424">代谢综合征 · 高度可疑</text>
+<text x="694.925" y="302.0" font-size="11.5" fill="#6f6f6f">4 项已符合，但缺腰围，无法下结论</text>
+<rect x="680.925" y="333.0" width="166.0" height="59" rx="5" fill="#fdf9f2" stroke="#e8dcc4" stroke-width="1"/>
+<rect x="680.925" y="333.0" width="4" height="59" rx="2" fill="#d97706"/>
+<text x="694.925" y="358.0" font-size="14" font-weight="600" fill="#242424">肾可能已被牵连</text>
+<text x="694.925" y="376.0" font-size="11.5" fill="#6f6f6f">方向明确，幅度待复查确认</text>
+<rect x="680.925" y="407.0" width="189.0" height="59" rx="5" fill="#fafafa" stroke="#e3e3e3" stroke-width="1"/>
+<rect x="680.925" y="407.0" width="4" height="59" rx="2" fill="#9aa0a6"/>
+<text x="694.925" y="432.0" font-size="14" font-weight="600" fill="#242424">心血管风险未分层</text>
+<text x="694.925" y="450.0" font-size="11.5" fill="#6f6f6f">需结合血压、血脂、吸烟一起算</text>
+<rect x="956.0749999999999" y="185.0" width="116.2" height="59" rx="5" fill="#f4faf1" stroke="#cfe3c5" stroke-width="1"/>
+<rect x="956.0749999999999" y="185.0" width="4" height="59" rx="2" fill="#4c9a2a"/>
+<text x="970.0749999999999" y="210.0" font-size="14" font-weight="600" fill="#242424">减重 4～8 kg</text>
+<text x="970.0749999999999" y="228.0" font-size="11.5" fill="#6f6f6f">六项的共同抓手</text>
+<rect x="956.0749999999999" y="259.0" width="200.20000000000002" height="59" rx="5" fill="#f4faf1" stroke="#cfe3c5" stroke-width="1"/>
+<rect x="956.0749999999999" y="259.0" width="4" height="59" rx="2" fill="#4c9a2a"/>
+<text x="970.0749999999999" y="284.0" font-size="14" font-weight="600" fill="#242424">2 周内 心内科 + 内分泌科</text>
+<text x="970.0749999999999" y="302.0" font-size="11.5" fill="#6f6f6f">现在是可逆窗口</text>
+<rect x="956.0749999999999" y="333.0" width="161.975" height="59" rx="5" fill="#f4faf1" stroke="#cfe3c5" stroke-width="1"/>
+<rect x="956.0749999999999" y="333.0" width="4" height="59" rx="2" fill="#4c9a2a"/>
+<text x="970.0749999999999" y="358.0" font-size="14" font-weight="600" fill="#242424">补测腰围</text>
+<text x="970.0749999999999" y="376.0" font-size="11.5" fill="#6f6f6f">30 秒，决定结论能否成立</text>
+<rect x="956.0749999999999" y="407.0" width="172.20000000000002" height="59" rx="5" fill="#f4faf1" stroke="#cfe3c5" stroke-width="1"/>
+<rect x="956.0749999999999" y="407.0" width="4" height="59" rx="2" fill="#4c9a2a"/>
+<text x="970.0749999999999" y="432.0" font-size="14" font-weight="600" fill="#242424">查尿微量白蛋白 / ACR</text>
+<text x="970.0749999999999" y="450.0" font-size="11.5" fill="#6f6f6f">1～3 个月内</text>
+<rect x="956.0749999999999" y="481.0" width="154.5" height="59" rx="5" fill="#f4faf1" stroke="#cfe3c5" stroke-width="1"/>
+<rect x="956.0749999999999" y="481.0" width="4" height="59" rx="2" fill="#4c9a2a"/>
+<text x="970.0749999999999" y="506.0" font-size="14" font-weight="600" fill="#242424">戒烟</text>
+<text x="970.0749999999999" y="524.0" font-size="11.5" fill="#6f6f6f">同时改善血压、血脂、肾</text>
+<text x="30" y="669" font-size="12" fill="#8a8a8a">实线 = 有依据的关联　|　虚线 = 推断，尚待确认</text>
+</svg>
